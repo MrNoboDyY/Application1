@@ -9,7 +9,9 @@ namespace Application1
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            Console.WriteLine(DateTime.Now);//affichage de la date et de l'heure
+
             AfficherBienvenue();
             DireBonjour("pierre", 36);
             DireBonjour("guyso", 54);
@@ -21,7 +23,7 @@ namespace Application1
 
 
             /* les tableaux en C# */
-            string[] jours = new string[]
+            string[] jours = new string[]//List<string> jours = new List<string>() + jours.Add("Mardi")
             {
             "lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"
             };
@@ -43,7 +45,7 @@ namespace Application1
 
             chiffres.RemoveAt(1);//chiffres contient 9,12
 
-            foreach(int chiffre in chiffres){
+            foreach(int chiffre in chiffres){//pour chaque chiffre de la list chiffres
                 Console.WriteLine(chiffre);
             }
 
@@ -75,6 +77,16 @@ namespace Application1
             return resultat;
         }
 
-        
+        //les Enumérations = enum 
+        enum Jrs
+        {
+            lundi,
+            mardi,
+            mercredi,
+            jeudi,
+            vendredi,
+            samedi,
+            dimanche
+        }
     }
 }
