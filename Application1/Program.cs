@@ -65,13 +65,8 @@ namespace Application1
             foreach(string jour in jours)
             {
                 Console.WriteLine(jour);
-            }
-
-
-
-
-
-
+            };
+         
 
             /*Console.WriteLine(DateTime.Now);//affichage de la date et de l'heure
 
@@ -115,6 +110,85 @@ namespace Application1
 
          */
         }
+
+        /*Tp avec Boucles
+             Le but de ce TP va être de créer 3 méthodes.
+             CalculSommeEntiers , CalculMoyenne, MultipleDeTrois
+             On commence par créer nos deux listes de multiples. Comme je vous avais conseillé, j’utilise une boucle for qui commence à trois avec un incrément de 3. Comme ça, je suis sûr d’avoir tous les multiples de 3 dans ma liste. C’est le même principe pour les multiples de 5, sachant que dans les deux cas, la condition de sortie est quand l’indice est supérieur à 100.
+             Ensuite, j’ai mes deux boucles imbriquées où je compare les deux valeurs et si elles sont égales, je rajoute la valeur à la somme globale que je renvoie en fin de méthode.
+             Pour bien comprendre ce qu’il se passe dans les boucles imbriquées, il faut comprendre que nous allons parcourir une unique fois la liste multiplesDe3 mais que nous allons parcourir autant de fois la liste multipleDe5 qu’il y a d’éléments dans la liste multipleDe3, c’est-à-dire 33 fois.
+             Ce n’est sans doute pas facile de le concevoir dès le début, mais pour vous aider, vous pouvez essayer de vous faire l’algorithme dans la tête :
+             On rentre dans la boucle qui parcoure la liste multiplesDe3
+             m3 vaut 3
+             On rentre dans la boucle qui parcoure la liste multiplesDe5
+             m5 vaut 5
+             On compare 3 à 5, ils sont différents
+             On passe à l’itération suivante de la liste multiplesDe5
+             m5 vaut 10
+             On compare 3 à 10, ils sont différents
+             Etc … jusqu’à ce qu’on ait fini de parcourir la liste des multiplesDe5
+             On passe à l’itération suivante de la liste multiplesDe3
+             m3 vaut 6
+             On rentre dans la boucle qui parcoure la liste multiplesDe5
+             m5 vaut 5
+             On compare 6 à 5, ils sont différents
+             On passe à l’itération suivante de la liste multiplesDe5
+             Etc …
+             */
+
+        static int CalculerSommeEntiers(int bornMin,int borneMax)
+        {
+            int resultat = 0;
+            for (int i = bornMin ; i <= borneMax ; i++) 
+            {
+                resultat += i;
+            }
+            return resultat;
+        }
+
+
+        static double CalculMoyenne(List<double> liste)
+        {
+            double somme = 0;
+            foreach(double valeur in liste)
+            {
+                somme += valeur;
+            }
+            return somme/liste.Count;
+        }
+
+
+
+        static int MultipleDeTrois()
+        {
+            List<int> multipleDe3 = new List<int>();//creation list pour m3
+            List<int> multipleDe5 = new List<int>();//creation list pour m5
+
+            for(int i = 3; i<=100; i += 3)//incrementation a 3 jusqu'à 100
+            {
+                multipleDe3.Add(i);//peuplement de la list
+            }
+            for(int i = 5; i<=100; i += 5)//incrementation a 5 jusqu'à 100
+            {
+                multipleDe5.Add(i);//peuplement de la list
+            }
+
+            int somme = 0;
+            foreach(int m3 in multipleDe3)
+            {
+                foreach(int m5 in multipleDe5)
+                {
+                    if (m3 == m5)
+                        somme += m3;
+                }
+            }
+            return somme;
+        }
+
+
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
 
 
         /* Methodes Afficher */
