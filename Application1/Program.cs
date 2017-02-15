@@ -19,21 +19,21 @@ namespace Application1
 
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("rose_vif");*/
-            /*================================================================================*/
+  /*================================================================================*/
             /* récupération des parametre de la ligne de commande*/
             /* Deboguer ===>> Proprietes 
             foreach (string parametre in args)
             {
                 Console.WriteLine(parametre);
             };*/
-            /*==========================================================================*/
+        /*==========================================================================*/   
 
             /* Déplacer du text / dessin
             int i = 0;
             int j = 0;
             int largeur = 21;
             int hauteur = 4;
-            Console.WriteLine(@"      .--------.");
+            Console.WriteLine(@"      .--------|.");
             Console.WriteLine(@" ____/_____|___ \_______");
             Console.WriteLine(@"O    _   - |   -    _   ,*");
             Console.WriteLine(@" '-((_))----------((_))--'");
@@ -71,8 +71,8 @@ namespace Application1
                 if (info.Key == ConsoleKey.Q)
                     break;
             }*/
-
-            /*=====================================================================*/
+        
+        /*=====================================================================*/
 
             /* Trouver le nombre myster en quelques coups   
         int valATrouver = new Random().Next(0, 100);
@@ -101,9 +101,9 @@ namespace Application1
             }
             Console.WriteLine("vous avez trouvé le nombre mystere en  "  + nbreDeCoups +  "coup(s)");*/
 
-
-            /*================================================================================================================*/
-
+            
+   /*================================================================================================================*/         
+                 
             /* Console.WriteLine("voulez-vous continuer (O/N) ??");
              ConsoleKeyInfo clav = Console.ReadKey(true);
              if (clav.Key == ConsoleKey.O)
@@ -263,7 +263,7 @@ namespace Application1
 
 
 
-        /*==============================================================================================================*/
+/*==============================================================================================================*/
 
 
 
@@ -359,7 +359,7 @@ namespace Application1
         }*/
 
         /*=========================================================================================*/
-
+        
         /*=========================================================================================*/
 
 
@@ -399,7 +399,7 @@ namespace Application1
             samedi,
             dimanche
         }*/
-
+        
     }
 
 
