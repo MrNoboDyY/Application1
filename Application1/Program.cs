@@ -10,7 +10,72 @@ namespace Application1
     {
         static void Main(string[] args)
         {
-            int valATrouver = new Random().Next(0, 100);
+            /* couleurs dans la console 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("jaune");
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("rouge");
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("rose_vif");*/
+  /*================================================================================*/
+            /* récupération des parametre de la ligne de commande*/
+            /* Deboguer ===>> Proprietes 
+            foreach (string parametre in args)
+            {
+                Console.WriteLine(parametre);
+            };*/
+        /*==========================================================================*/   
+
+            /* Déplacer du text / dessin
+            int i = 0;
+            int j = 0;
+            int largeur = 21;
+            int hauteur = 4;
+            Console.WriteLine(@"      .--------.");
+            Console.WriteLine(@" ____/_____|___ \___");
+            Console.WriteLine(@"O    _   - |   _   ,*");
+            Console.WriteLine(@" '--(_)-------(_)--'");
+            while (true)
+            {
+                ConsoleKeyInfo info = Console.ReadKey(true);
+                switch (info.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        if (i > 0)
+                        {
+                            Console.MoveBufferArea(i, j, largeur, hauteur, i - 1, j);
+                            i--;
+                        }
+                        break;
+                    case ConsoleKey.RightArrow:
+                        if (i < Console.WindowWidth - largeur)
+                        {
+                            Console.MoveBufferArea(i, j, largeur, hauteur, i + 1, j);
+                            i++;
+                        }
+                        break;
+                    case ConsoleKey.UpArrow:
+                        if (j > 0)
+                        {
+                            Console.MoveBufferArea(i, j, largeur, hauteur, i, j - 1);
+                            j--;
+                        }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.MoveBufferArea(i, j, largeur, hauteur, i, j + 1);
+                        j++;
+                        break;
+                }
+                if (info.Key == ConsoleKey.Q)
+                    break;
+            }*/
+        
+        /*=====================================================================*/
+
+            /* Trouver le nombre myster en quelques coups   
+        int valATrouver = new Random().Next(0, 100);
             int nbreDeCoups = 0;
             bool trouve = false;
             Console.WriteLine("saisir un nbre entre 0 et 100 exclu");
@@ -34,8 +99,10 @@ namespace Application1
                 else
                     Console.WriteLine("la valeur saisie est incorrect");
             }
-            Console.WriteLine("vous avez trouvé le nombre mystere en  "  + nbreDeCoups +  "coup(s)");
+            Console.WriteLine("vous avez trouvé le nombre mystere en  "  + nbreDeCoups +  "coup(s)");*/
+
             
+   /*================================================================================================================*/         
                  
             /* Console.WriteLine("voulez-vous continuer (O/N) ??");
              ConsoleKeyInfo clav = Console.ReadKey(true);
@@ -191,12 +258,12 @@ namespace Application1
          */
 
             //Console.WriteLine(SommeIntersection());
-        }
+        }//fin du main !!!!!!!!!!!
 
 
 
 
-
+/*==============================================================================================================*/
 
 
 
@@ -244,9 +311,7 @@ namespace Application1
                 somme += valeur;
             }
             return somme/liste.Count;
-        }*/
-
-
+        }
 
         static int SommeIntersection()
         {
