@@ -34,7 +34,7 @@ namespace Application1
                 else
                     Console.WriteLine("la valeur saisie est incorrect");
             }
-            Console.WriteLine("vous avez trouvé le nombre mystere en  " + nbreDeCoups + "coup(s)");
+            Console.WriteLine("vous avez trouvé le nombre mystere en  "  + nbreDeCoups +  "coup(s)");
             
                  
             /* Console.WriteLine("voulez-vous continuer (O/N) ??");
@@ -190,7 +190,7 @@ namespace Application1
 
          */
 
-            Console.WriteLine(SommeIntersection());
+            //Console.WriteLine(SommeIntersection());
         }
 
 
