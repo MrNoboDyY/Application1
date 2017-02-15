@@ -33,10 +33,10 @@ namespace Application1
             int j = 0;
             int largeur = 21;
             int hauteur = 4;
-            Console.WriteLine(@"      .--------.");
-            Console.WriteLine(@" ____/_____|___ \___");
-            Console.WriteLine(@"O    _   - |   _   ,*");
-            Console.WriteLine(@" '--(_)-------(_)--'");
+            Console.WriteLine(@"      .--------|.");
+            Console.WriteLine(@" ____/_____|___ \_______");
+            Console.WriteLine(@"O    _   - |   -    _   ,*");
+            Console.WriteLine(@" '-((_))----------((_))--'");
             while (true)
             {
                 ConsoleKeyInfo info = Console.ReadKey(true);
