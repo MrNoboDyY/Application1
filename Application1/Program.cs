@@ -66,7 +66,29 @@ namespace Application1
             {
                 Console.WriteLine(jour);
             };
-         
+
+            /* Lecture clavier en C#  */
+            /*Console.ReadLine();//lecture au clavier de ce que tape le client
+            Console.WriteLine("quel est votre âge ??");
+            string age1 = Console.ReadLine();
+            Console.WriteLine("vous avez : " + age1 + "ans");*/
+
+
+            bool ageValid = false;
+            int age = -1;
+            while (!ageValid)
+            {
+                Console.WriteLine("entrez votre age");
+                string saisie = Console.ReadLine();
+                if (int.TryParse(saisie, out age))
+                    ageValid = true;
+                else
+                {
+                    ageValid = false;
+                    Console.WriteLine("l'age saisi est incorrect...!");
+                }
+            }
+            Console.WriteLine("votre age est : " + age);
 
             /*Console.WriteLine(DateTime.Now);//affichage de la date et de l'heure
 
@@ -111,9 +133,16 @@ namespace Application1
          */
         }
 
+
+
+
+
+
+
+
         /*Tp avec Boucles
              Le but de ce TP va être de créer 3 méthodes.
-             CalculSommeEntiers , CalculMoyenne, MultipleDeTrois
+             CalculSommeEntiers , CalculMoyenne, SommeIntersection
              On commence par créer nos deux listes de multiples. Comme je vous avais conseillé, j’utilise une boucle for qui commence à trois avec un incrément de 3. Comme ça, je suis sûr d’avoir tous les multiples de 3 dans ma liste. C’est le même principe pour les multiples de 5, sachant que dans les deux cas, la condition de sortie est quand l’indice est supérieur à 100.
              Ensuite, j’ai mes deux boucles imbriquées où je compare les deux valeurs et si elles sont égales, je rajoute la valeur à la somme globale que je renvoie en fin de méthode.
              Pour bien comprendre ce qu’il se passe dans les boucles imbriquées, il faut comprendre que nous allons parcourir une unique fois la liste multiplesDe3 mais que nous allons parcourir autant de fois la liste multipleDe5 qu’il y a d’éléments dans la liste multipleDe3, c’est-à-dire 33 fois.
@@ -159,7 +188,7 @@ namespace Application1
 
 
 
-        static int MultipleDeTrois()
+        static int SommeIntersection()
         {
             List<int> multipleDe3 = new List<int>();//creation list pour m3
             List<int> multipleDe5 = new List<int>();//creation list pour m5
@@ -190,7 +219,7 @@ namespace Application1
         /// //////////////////////////////////////////////////////////////////////////////////////
         /// </summary>
 
-
+        
         /* Methodes Afficher */
         static void AfficherBonWeekEnd()
         {
@@ -209,9 +238,9 @@ namespace Application1
             Console.WriteLine("Bonsoir " + Environment.UserName);
         }
 
-        /// <summary>
-        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// </summary>
+        /*=========================================================================================*/
+        
+        /*=========================================================================================*/
 
 
         /* creation d'une methode */
@@ -250,5 +279,8 @@ namespace Application1
             samedi,
             dimanche
         }
+        
     }
+
+
 }
