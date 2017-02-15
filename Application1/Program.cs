@@ -10,13 +10,53 @@ namespace Application1
     {
         static void Main(string[] args)
         {
+            int valATrouver = new Random().Next(0, 100);
+            int nbreDeCoups = 0;
+            bool trouve = false;
+            Console.WriteLine("saisir un nbre entre 0 et 100 exclu");
+            while (!trouve)
+            {
+                string nbreSaisi = Console.ReadLine();
+                int valSaisie;
+                if (int.TryParse(nbreSaisi, out valSaisie))
+                {
+                    if (valSaisie == valATrouver)
+                        trouve = true;
+                    else
+                    {
+                        if (valSaisie < valATrouver)
+                            Console.WriteLine("trop petit ...");
+                        else
+                            Console.WriteLine("trop grand");
+                    }
+                    nbreDeCoups++;
+                }
+                else
+                    Console.WriteLine("la valeur saisie est incorrect");
+            }
+            Console.WriteLine("vous avez trouvé le nombre mystere en  " + nbreDeCoups + "coup(s)");
+            
+                 
+            /* Console.WriteLine("voulez-vous continuer (O/N) ??");
+             ConsoleKeyInfo clav = Console.ReadKey(true);
+             if (clav.Key == ConsoleKey.O)
+             {
+                 Console.WriteLine("on continue !!!!!");
+             }
+             else
+             {
+                 Console.WriteLine("on arrete tout :((");
+             }*/
+
+
+            /*=======================================================================================================================================================*/
             /*Tp avec enum 
             Le but est de créer une petite application qui affiche un message différent en fonction du nom de l’utilisateur et du moment de la journée:
             Bonjour XXX pour la tranche horaire 9h <-> 18h, les lundi, mardi, mercredi, jeudi et vendredi
             Bonsoir XXX pour la tranche horaire 18h <-> 9h, les lundi, mardi, mercredi, jeudi
-            Bon week-end XXX pour la tranche horaire vendredi 18h <->lundi 9h*/
+            Bon week-end XXX pour la tranche horaire vendredi 18h <->lundi 9h
 
-            if(DateTime.Now.DayOfWeek==DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)//samedi ou dimanche 
+            if (DateTime.Now.DayOfWeek==DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)//samedi ou dimanche 
             {
                 AfficherBonWeekEnd();//c'est le weekend
             }
@@ -43,15 +83,17 @@ namespace Application1
                         }
                     }
                 }
-            }
+            }*/
+
+            /*======================================================================================================================*/
 
             /* les Boucles*/
-            /* Boucle For */
+            /* Boucle For 
             string[] jours = new string[]//List<string> jours = new List<string>() + jours.Add("Mardi")
              {
              "lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"
              };
-            /*Array.Sort(jours);*/
+            /*Array.Sort(jours);
              Console.WriteLine("----------------------" + Environment.NewLine);
 
              for (int i = 0; i < jours.Length; i++)
@@ -61,12 +103,12 @@ namespace Application1
 
              };
 
-            /*Boucle ForEach */           
+            /*Boucle ForEach            
             foreach(string jour in jours)
             {
                 Console.WriteLine(jour);
-            };
-
+            };*/
+            /*================================================================================================================================================*/
             /* Lecture clavier en C#  */
             /*Console.ReadLine();//lecture au clavier de ce que tape le client
             Console.WriteLine("quel est votre âge ??");
@@ -74,21 +116,37 @@ namespace Application1
             Console.WriteLine("vous avez : " + age1 + "ans");*/
 
 
-            bool ageValid = false;
-            int age = -1;
-            while (!ageValid)
+            /* bool ageValid = false;
+             int age = -1;
+             while (!ageValid)
+             {
+                 Console.WriteLine("entrez votre age");
+                 string saisie = Console.ReadLine();
+                 if (int.TryParse(saisie, out age))
+                     ageValid = true;
+                 else
+                 {
+                     ageValid = false;
+                     Console.WriteLine("l'age saisi est incorrect...!");
+                 }
+             }
+             Console.WriteLine("votre age est : " + age);*/
+
+
+            /*==========================================================================*/
+
+            /* lire un caractere tapé au clavier */
+            /*Console.WriteLine("taper un caractere avant de commencer");
+            Console.ReadKey(true);
+            int total = 0;
+            for(int i = 0; i < 100; i++)
             {
-                Console.WriteLine("entrez votre age");
-                string saisie = Console.ReadLine();
-                if (int.TryParse(saisie, out age))
-                    ageValid = true;
-                else
-                {
-                    ageValid = false;
-                    Console.WriteLine("l'age saisi est incorrect...!");
-                }
+                total += i;
             }
-            Console.WriteLine("votre age est : " + age);
+            Console.WriteLine(total);*/
+
+
+
 
             /*Console.WriteLine(DateTime.Now);//affichage de la date et de l'heure
 
@@ -131,6 +189,8 @@ namespace Application1
 
 
          */
+
+            Console.WriteLine(SommeIntersection());
         }
 
 
@@ -163,7 +223,7 @@ namespace Application1
              On compare 6 à 5, ils sont différents
              On passe à l’itération suivante de la liste multiplesDe5
              Etc …
-             */
+             
 
         static int CalculerSommeEntiers(int bornMin,int borneMax)
         {
@@ -184,7 +244,7 @@ namespace Application1
                 somme += valeur;
             }
             return somme/liste.Count;
-        }
+        }*/
 
 
 
@@ -193,34 +253,29 @@ namespace Application1
             List<int> multipleDe3 = new List<int>();//creation list pour m3
             List<int> multipleDe5 = new List<int>();//creation list pour m5
 
-            for(int i = 3; i<=100; i += 3)//incrementation a 3 jusqu'à 100
+            for(int i = 3; i<=20; i += 3)//incrementation a 3 jusqu'à 100
             {
                 multipleDe3.Add(i);//peuplement de la list
             }
-            for(int i = 5; i<=100; i += 5)//incrementation a 5 jusqu'à 100
+            for(int i = 5; i<=20; i += 5)//incrementation a 5 jusqu'à 100
             {
                 multipleDe5.Add(i);//peuplement de la list
             }
 
             int somme = 0;
-            foreach(int m3 in multipleDe3)
+            foreach(int m3 in multipleDe3)//on rentre dans les multiples de 3
             {
-                foreach(int m5 in multipleDe5)
+                foreach(int m5 in multipleDe5)//on rentre dans les multiples de 5
                 {
-                    if (m3 == m5)
-                        somme += m3;
+                    if (m3 == m5)//comparaison des m3 et m5
+                        somme += m3;//affectation a la variable somme
                 }
             }
-            return somme;
+            return somme;//affichage de la variable somme
         }
 
-
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////////////////////
-        /// </summary>
-
         
-        /* Methodes Afficher */
+        /* Methodes Afficher 
         static void AfficherBonWeekEnd()
         {
             Console.WriteLine("Bon Weekend " + Environment.UserName);
@@ -236,14 +291,14 @@ namespace Application1
         static void AfficherBonsoir()
         {
             Console.WriteLine("Bonsoir " + Environment.UserName);
-        }
+        }*/
 
         /*=========================================================================================*/
         
         /*=========================================================================================*/
 
 
-        /* creation d'une methode */
+        /* creation d'une methode 
         static void AfficherBienvenue()
         {
             Console.WriteLine("premiere methode en C#...");            
@@ -252,7 +307,7 @@ namespace Application1
         }
 
 
-        /* creation d'une methode */
+        /* creation d'une methode 
         static void DireBonjour(string nom,int age)
         {
             Console.WriteLine("bonjour  je suis   " + nom + " et ");            
@@ -260,7 +315,7 @@ namespace Application1
             Console.WriteLine("**********************************");
         }
 
-        /* retour de methode calculant la recineCarrée */
+        /* retour de methode calculant la recineCarrée 
         static double LongueurHypothenuse(double e,double f)
         {
             double sommeDesCarres = e * e + f * f;
@@ -278,7 +333,7 @@ namespace Application1
             vendredi,
             samedi,
             dimanche
-        }
+        }*/
         
     }
 
