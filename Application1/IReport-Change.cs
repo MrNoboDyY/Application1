@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application1
 {
-    interface IReport_Change
+    interface IReportChange
     {
     }
 }
