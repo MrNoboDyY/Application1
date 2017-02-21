@@ -9,12 +9,14 @@ using System.Windows.Forms;
 namespace Application1
 
 {
-   public class Project
+   public class Project : IReportChange
     {
         private string path;
         private DataTable data = new DataTable();
         private bool hasChanged;
         private string filename;
+
+        
 
         public string Filename
         {

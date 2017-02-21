@@ -8,5 +8,12 @@ namespace Application1
 {
     interface IReportChange
     {
+        bool HasChanged
+        {
+            get;
+            set;
+        }
     }
+    event EventHandler Changed;
+    
 }
