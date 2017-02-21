@@ -4,8 +4,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Application1
+
 {
    public class Project
     {
@@ -84,7 +86,8 @@ namespace Application1
             /*Si l'utilisateur doit confirmer la sauvegarde et que 
              le projet a ete modifié,l'utilisateur doit cliquer sur
              le bouton Oui de la boite de dialogue*/
-            if (!Ask || (this.HasChanged && MessageBox.Show(
+            if (!Ask || 
+                (this.HasChanged && MessageBox.Show(
                 "Voulez-vous sauvegarder les modifs ?",                
                 "Sauvegarder",MessageBoxButtons.YesNo,
                 MessageBoxIcon.Information,
@@ -93,10 +96,9 @@ namespace Application1
                 /*Si l'utilisateur n'a pas la possibilité de choisir 
                  un fichier et que le nom du fichier ainsi que son chemin sont definis,
                  le projet est enregistré et la propriété HasChanged est reinitialisée */
-                 if(!ShowDialog && 
-                    !string.IsNullOrEmpty(this.Filename) 
-                    &&
-                    !string.IsNullOrEmpty(this.Path)){
+                 if(!ShowDialog 
+                    &&!string.IsNullOrEmpty(this.Filename) 
+                    &&!string.IsNullOrEmpty(this.Path)){
                     this.HasChanged = false;
                 }
                 /*Dans le cas contraire l'utilisateur doit choisir 
@@ -106,9 +108,9 @@ namespace Application1
                 {
                     /*Instanciation et initialisation de la boite de dialogue*/
                     SaveFileDialog sfdProject = new SaveFileDialog();
-                    sfdProject.Filter = "Self Mailer"(*.smpx) | *.smpx;
+                    sfdProject.Filter = "Self Mailer(*.smpx) | *.smpx";
                     sfdProject.RestoreDirectory = true;
-                    sfdProject.SupportMultiDotteExtensions = true;
+                    sfdProject.SupportMultiDottedExtensions = true;
                     sfdProject.Title = "Sauver le Projet";
                     /*Affichage de la boite de dialogue et test de la valeur de retour */
                     if (sfdProject.ShowDialog() == DialogResult.OK)
@@ -116,9 +118,9 @@ namespace Application1
                         /*Assignation des valeurs aux variables et 
                          sauvegarde du projet*/
                         this.Filename = 
-                            System.IO.Path.GetFileName(sfdProject.Filename);
+                            System.IO.Path.GetFileName(sfdProject.FileName);
                         this.Path =
-                            System.IO.Path.GetDirectoryName(sfdProject.Filename);
+                            System.IO.Path.GetDirectoryName(sfdProject.FileName);
                         //Sauvegarde des données non implementées
                         this.HasChanged=false;
 

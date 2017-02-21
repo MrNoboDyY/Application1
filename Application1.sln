@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application1", "Application1\Application1.csproj", "{239428A8-A9D1-4D2A-94C8-4ECE8D236B0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfMailer", "Application1\SelfMailer.csproj", "{239428A8-A9D1-4D2A-94C8-4ECE8D236B0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{ED65C6A1-63DC-4B1E-9042-39A2AAFF6AE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
